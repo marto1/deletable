@@ -23,10 +23,13 @@ function winning(e, b){
 	    checknum += currnum[i];
 	}
     }
-    if (!isPrime(checknum)){
+    checknum = Number(checknum);
+    if (!isPrime()){
 	console.log("You lost!");
-    } else {
-	console.log("Noice!");
+	return;
+    }
+    if (checknum.toString().length == 1){
+	console.log("You win!");
     }
 }
 
