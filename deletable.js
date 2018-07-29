@@ -4,6 +4,8 @@ var currnum = NUMBER.toString().split('');
 
 
 function reset() {
+    var m = document.getElementById('main');
+    m.innerHTML = '';
     var currnum = NUMBER.toString().split('');
     main();
 }
@@ -25,8 +27,7 @@ function winnigMessage(msg)
 {
     customAlert(msg,"3000");
     setTimeout(function() {
-	// document.getElementById('main');
-	// reset();
+	reset();
     },"3100");
 
 }
