@@ -8,7 +8,8 @@ function box(number) {
 function handleMouseDown(e, b){
     // console.log(e);
     console.log(b);
-    b.setAttribute("class", "hidden");
+    b.setAttribute("class", "box hidden");
+    setTimeout(function(){b.remove()}, 1000);
 }
 
 function numbers(number) {
