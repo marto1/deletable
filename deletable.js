@@ -5,11 +5,21 @@ function box(number) {
     return box;
 }
 
+function handleMouseDown(e, b){
+    // console.log(e);
+    console.log(b);
+    b.setAttribute("class", "hidden");
+}
+
 function numbers(number) {
     var snum = number.toString();
     var numbox = document.createElement("div");
     for (var i = 0; i < snum.length; i++) {
-	numbox.appendChild(box(snum[i]));
+	var b = box(snum[i]);
+	numbox.appendChild(b);
+	b.onmousedown = function(e){
+	    handleMouseDown(e, this);
+	};
     }
     return numbox;
 }

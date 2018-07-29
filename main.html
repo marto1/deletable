@@ -10,6 +10,16 @@
          float: left;
          text-align:center;
       }
+      .hidden {
+         visibility: hidden;
+         opacity: 0;
+         transition: visibility 0s 2s, opacity 1s linear;
+      }
+      .visible {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 2s linear;
+      }
     </style>
   </head>
   <body>
