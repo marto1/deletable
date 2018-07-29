@@ -1,9 +1,6 @@
-BOX_STYLE = "border: solid 2px Red;";
-BOX_STYLE += "width:50px";
-
 function box(number) {
     var box = document.createElement("div");
-    box.setAttribute("style", BOX_STYLE);
+    box.setAttribute("class", "box");
     box.innerHTML = "<h3>" + number + "</h3>";
     return box;
 }
