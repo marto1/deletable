@@ -6,10 +6,14 @@ function box(number) {
 }
 
 function handleMouseDown(e, b){
-    // console.log(e);
-    console.log(b);
     b.setAttribute("class", "box hidden");
-    setTimeout(function(){b.remove()}, 1000);
+    setTimeout(function(){b.remove()}, 500);
+}
+
+function isPrime(num) {
+  for(var i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num !== 1;
 }
 
 function numbers(number) {
