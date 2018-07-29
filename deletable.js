@@ -2,6 +2,35 @@ var NUMBER = 4125673;
 //track current state of number
 var currnum = NUMBER.toString().split('');
 
+
+function reset() {
+    var currnum = NUMBER.toString().split('');
+    main();
+}
+
+function customAlert(msg,duration)
+{
+ var styler = document.createElement("div");
+ styler.setAttribute("style","border: solid 2px #859900;width:278;height:auto;top:50%;left:40%;background-color:#073642;color:#859900");
+ styler.innerHTML = "<h3>"+msg+"</h3>";
+ setTimeout(function()
+ {
+   styler.parentNode.removeChild(styler);
+ },duration);
+ var child = document.getElementById('main');
+ child.parentNode.insertBefore(styler, child);
+}
+
+function winnigMessage(msg)
+{
+    customAlert(msg,"3000");
+    setTimeout(function() {
+	// document.getElementById('main');
+	// reset();
+    },"3100");
+
+}
+
 function box(number) {
     var box = document.createElement("div");
     box.setAttribute("class", "box");
@@ -23,13 +52,13 @@ function winning(e, b){
 	    checknum += currnum[i];
 	}
     }
-    checknum = Number(checknum);
-    if (!isPrime()){
-	console.log("You lost!");
+    if (checknum.length == 0){
+	winnigMessage("You win!");
 	return;
     }
-    if (checknum.toString().length == 1){
-	console.log("You win!");
+    checknum = Number(checknum);
+    if (!isPrime(checknum)){
+	winnigMessage("You lost!");
     }
 }
 
